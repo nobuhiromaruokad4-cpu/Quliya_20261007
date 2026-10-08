@@ -202,7 +202,7 @@ export default function App() {
       <main className="flex-1 max-w-7xl w-full mx-auto p-2 sm:p-3 space-y-2.5">
         {/* === コスト試算モード時 (A4縦・最適化レイアウト) === */}
         {viewMode === 'summary' && (
-          <div className="space-y-2.5 print:space-y-2 page-break-inside-avoid">
+          <div className="space-y-2.5 print:space-y-2.5 page-break-inside-avoid">
             {/* 上段: 提案書ヘッダー・月次コスト削減・3方式スピード対比 */}
             <SalesSummaryMode
               activeResult={activeResult}
@@ -210,18 +210,18 @@ export default function App() {
             />
 
             {/* 中下段: 3方式比較グラフ（左側 約2/3・8/12） ＋ メカニズム＆お問い合わせ窓口（右側 約1/3・4/12） */}
-            <div className="w-full grid grid-cols-1 md:grid-cols-12 gap-2.5 items-stretch page-break-inside-avoid print:grid-cols-12 print:gap-1.5">
+            <div className="w-full grid grid-cols-1 md:grid-cols-12 gap-2.5 items-stretch page-break-inside-avoid print:grid-cols-12 print:gap-2">
               {/* 左側 (約2/3・8/12): 3方式冷却スピード比較グラフ */}
               <div className="w-full md:col-span-8 flex flex-col bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden print:col-span-8 print:rounded-lg print:border-slate-300">
-                <div className="bg-slate-50 px-3 py-1.5 border-b border-slate-200 flex items-center justify-between print:px-2 print:py-1">
+                <div className="bg-slate-50 px-3 py-1.5 border-b border-slate-200 flex items-center justify-between print:px-2.5 print:py-1.5">
                   <div className="flex items-center space-x-1.5">
                     <span className="w-2 h-2 rounded-full bg-cyan-600"></span>
-                    <span className="text-sm font-bold text-slate-900 print:text-xs">
+                    <span className="text-sm font-bold text-slate-900 print:text-[12.5px]">
                       3方式冷却スピード比較グラフ
                     </span>
                   </div>
                 </div>
-                <div className="p-2 sm:p-2.5 flex-1 flex flex-col justify-center print:p-0.5">
+                <div className="p-2 sm:p-2.5 flex-1 flex flex-col justify-center print:p-1">
                   <ChartsSection
                     activeResult={activeResult}
                     savedResults={savedCases}
