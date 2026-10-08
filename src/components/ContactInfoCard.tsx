@@ -3,37 +3,32 @@ import { Phone, Mail, User, Building } from 'lucide-react';
 
 export const ContactInfoCard: React.FC = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 print:grid-cols-2 print:gap-2 items-stretch w-full">
-      {/* 1. 左側: QULIYA式急速冷却の伝熱メカニズム */}
-      <div className="bg-white border border-slate-200 rounded-xl p-3 shadow-xs print:p-2 print:rounded-lg print:border-slate-300 flex flex-col justify-between">
-        <div>
-          <div className="pb-1 border-b border-slate-100 mb-1.5 space-y-1 print:pb-0.5 print:mb-1">
-            <div className="flex items-center space-x-1.5">
-              <span className="w-2 h-2 rounded-full bg-cyan-600"></span>
-              <span className="text-sm font-bold text-slate-900 leading-tight print:text-xs">
-                QULIYA式急速冷却のメカニズム
-              </span>
-            </div>
-            <div className="flex items-center justify-end gap-1.5">
-              <span className="text-[9.5px] font-bold text-red-600 bg-red-50 border border-red-200 px-1.5 py-0.5 rounded shadow-2xs leading-tight print:text-[8.5px] print:px-1.5 print:py-0.2">
-                特許7598603
-              </span>
-              <span className="text-[9.5px] font-bold text-red-600 bg-red-50 border border-red-200 px-1.5 py-0.5 rounded shadow-2xs leading-tight print:text-[8.5px] print:px-1.5 print:py-0.2">
-                特願2026-201346
-              </span>
-            </div>
+    <div className="flex flex-col gap-2 print:gap-1.5 h-full justify-between w-full">
+      {/* 1. 上段: QULIYA式急速冷却の伝熱メカニズム */}
+      <div className="bg-white border border-slate-200 rounded-xl p-2.5 shadow-xs print:p-2 print:rounded-lg print:border-slate-300">
+        <div className="pb-1 border-b border-slate-100 mb-1 space-y-1 print:pb-0.5 print:mb-1">
+          <div className="flex items-center space-x-1.5">
+            <span className="w-2 h-2 rounded-full bg-cyan-600"></span>
+            <span className="text-sm font-bold text-slate-900 leading-tight print:text-xs">
+              QULIYA式急速冷却のメカニズム
+            </span>
           </div>
-          <p className="text-xs text-slate-600 leading-relaxed print:text-[9.5px] print:leading-relaxed">
-            金属製円筒の中に水道水を流入させ、スープの中で連続回転。円筒の高速回転により冷却の大きな抵抗となる境膜（温度境界層）を極限まで薄くし、高い熱交換効率で急速冷却。菌が10〜20分で倍増する<strong className="text-red-600 font-bold">爆発的増殖ピーク（35℃〜40℃）を一気に突き抜け30℃へ急冷</strong>。風味維持と食中毒リスク防止を両立します。
-          </p>
+          <div className="flex items-center justify-end gap-1.5">
+            <span className="text-[9.5px] font-bold text-red-600 bg-red-50 border border-red-200 px-1.5 py-0.5 rounded shadow-2xs leading-tight print:text-[8.5px] print:px-1.5 print:py-0.2">
+              特許7598603
+            </span>
+            <span className="text-[9.5px] font-bold text-red-600 bg-red-50 border border-red-200 px-1.5 py-0.5 rounded shadow-2xs leading-tight print:text-[8.5px] print:px-1.5 print:py-0.2">
+              特願2026-201346
+            </span>
+          </div>
         </div>
-        <div className="mt-2 pt-1.5 border-t border-slate-100 text-[10.5px] text-slate-500 font-mono print:text-[8.5px] print:mt-1 print:pt-0.5">
-          東北大学 多元物質科学研究所 (IMRAM) 共同研究伝熱解析モデル
-        </div>
+        <p className="text-[10.5px] text-slate-600 leading-relaxed print:text-[9.5px] print:leading-relaxed">
+          金属製円筒の中に水道水を流入させ、スープの中で連続回転。円筒の高速回転により冷却の大きな抵抗となる境膜（温度境界層）を極限まで薄くし、高い熱交換効率で急速冷却。菌が10〜20分で倍増する<strong className="text-red-600 font-bold">爆発的増殖ピーク（35℃〜40℃）を一気に突き抜け30℃へ急冷</strong>。風味維持と食中毒リスク防止を両立します。
+        </p>
       </div>
 
-      {/* 2. 右側: お問い合わせ・製品窓口カード */}
-      <div className="bg-slate-50 border border-slate-200 rounded-xl p-3 shadow-xs print:p-2 print:rounded-lg print:border-slate-300 flex flex-col justify-between">
+      {/* 2. 下段: お問い合わせ・製品窓口カード */}
+      <div className="bg-slate-50 border border-slate-200 rounded-xl p-2.5 flex flex-col justify-between flex-1 shadow-xs print:p-2 print:rounded-lg print:border-slate-300">
         <div>
           <div className="pb-1 border-b border-slate-200 mb-1 space-y-1 print:pb-0.5 print:mb-1">
             <div className="flex items-center space-x-1.5">

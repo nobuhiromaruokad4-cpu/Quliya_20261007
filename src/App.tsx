@@ -209,32 +209,35 @@ export default function App() {
               threeModesData={threeModesData}
             />
 
-            {/* 中段: 3方式冷却スピード比較グラフ（A4縦・フル幅ワイド表示） */}
-            <div className="w-full flex flex-col bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden print:rounded-lg print:border-slate-300 page-break-inside-avoid">
-              <div className="bg-slate-50 px-3 py-1.5 border-b border-slate-200 flex items-center justify-between print:px-2.5 print:py-1">
-                <div className="flex items-center space-x-1.5">
-                  <span className="w-2 h-2 rounded-full bg-cyan-600"></span>
-                  <span className="text-sm font-bold text-slate-900 print:text-xs">
-                    3方式冷却スピード比較グラフ
-                  </span>
+            {/* 中下段: 3方式比較グラフ（左側 約2/3・8/12） ＋ メカニズム＆お問い合わせ窓口（右側 約1/3・4/12） */}
+            <div className="w-full grid grid-cols-1 md:grid-cols-12 gap-2.5 items-stretch page-break-inside-avoid print:grid-cols-12 print:gap-1.5">
+              {/* 左側 (約2/3・8/12): 3方式冷却スピード比較グラフ */}
+              <div className="w-full md:col-span-8 flex flex-col bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden print:col-span-8 print:rounded-lg print:border-slate-300">
+                <div className="bg-slate-50 px-3 py-1.5 border-b border-slate-200 flex items-center justify-between print:px-2 print:py-1">
+                  <div className="flex items-center space-x-1.5">
+                    <span className="w-2 h-2 rounded-full bg-cyan-600"></span>
+                    <span className="text-sm font-bold text-slate-900 print:text-xs">
+                      3方式冷却スピード比較グラフ
+                    </span>
+                  </div>
+                </div>
+                <div className="p-2 sm:p-2.5 flex-1 flex flex-col justify-center print:p-0.5">
+                  <ChartsSection
+                    activeResult={activeResult}
+                    savedResults={savedCases}
+                    threeModesData={threeModesData}
+                    initialTab="threeModes"
+                    compact={true}
+                    hideTabs={true}
+                    hideHoverReadout={true}
+                  />
                 </div>
               </div>
-              <div className="p-2 sm:p-2.5 flex-1 flex flex-col justify-center print:p-1">
-                <ChartsSection
-                  activeResult={activeResult}
-                  savedResults={savedCases}
-                  threeModesData={threeModesData}
-                  initialTab="threeModes"
-                  compact={true}
-                  hideTabs={true}
-                  hideHoverReadout={true}
-                />
-              </div>
-            </div>
 
-            {/* 下段: メカニズム (左50%) ＋ お問い合わせ・各社ロゴ (右50%) */}
-            <div className="w-full page-break-inside-avoid">
-              <ContactInfoCard />
+              {/* 右側 (約1/3・4/12): メカニズム（上段）＋ お問い合わせ・製品窓口（下段） */}
+              <div className="w-full md:col-span-4 flex flex-col print:col-span-4">
+                <ContactInfoCard />
+              </div>
             </div>
           </div>
         )}
@@ -290,7 +293,7 @@ export default function App() {
       {/* Footer attribution */}
       <footer className="mt-auto border-t border-slate-200 bg-white/80 py-2.5 px-4 text-center text-xs text-slate-500 no-print">
         <p className="font-mono text-[11px]">
-          Developed by IMRAM, Tohoku University
+          Developed by N.Maruoka, IMRAM, Tohoku University
         </p>
       </footer>
     </div>

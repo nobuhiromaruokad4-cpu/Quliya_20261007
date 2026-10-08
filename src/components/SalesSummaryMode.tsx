@@ -129,21 +129,19 @@ export const SalesSummaryMode: React.FC<SalesSummaryModeProps> = ({
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <span className="font-extrabold text-sm tracking-tight text-slate-900">
-              QULIYA CHILLER 導入シミュレーション提案書
-            </span>
-            <span className="text-[9px] text-slate-500 font-mono">
-              [東北大学IMRAM共同研究モデル]
+              {customerName.trim()
+                ? `${customerName.trim().replace(/(様|御中)$/, '').trim()} 様向け QULIYA CHILLER 導入シミュレーション提案書`
+                : 'お客様向け QULIYA CHILLER 導入シミュレーション提案書'}
             </span>
           </div>
-          <div className="text-right text-[9px] text-slate-600 font-mono leading-tight">
-            <div>作成日: {todayStr}</div>
-            <div>株式会社 新越ワークス / Three Snow</div>
+          <div className="text-right text-[9.5px] text-slate-600 font-mono leading-tight">
+            作成日: {todayStr}
           </div>
         </div>
 
         {/* 提案先・営業担当名（入力されている場合） */}
         {(customerName || salesRepName) && (
-          <div className="mt-1 flex items-center justify-between text-xs bg-slate-50 px-2 py-0.5 rounded border border-slate-200">
+          <div className="mt-0.5 flex items-center justify-between text-xs bg-slate-50 px-2 py-0.5 rounded border border-slate-200">
             <div>
               <span className="text-[9px] text-slate-500">ご提案先:</span>{' '}
               <strong className="text-xs text-slate-900">
@@ -151,7 +149,7 @@ export const SalesSummaryMode: React.FC<SalesSummaryModeProps> = ({
                   ? customerName.endsWith('様') || customerName.endsWith('御中')
                     ? customerName
                     : `${customerName} 御中`
-                  : '貴社 御中'}
+                  : '貴店 御中'}
               </strong>
             </div>
             {salesRepName && (

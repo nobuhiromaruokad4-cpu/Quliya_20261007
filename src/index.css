@@ -60,10 +60,10 @@
     box-shadow: none !important;
   }
 
-  /* 印刷時のグラフ枠高さ制御 (A4縦フル幅に最適化) */
+  /* 印刷時のグラフ枠高さ制御 (左2/3・右1/3レイアウトに最適化) */
   .print-chart-container {
-    height: 190px !important;
-    min-height: 190px !important;
-    max-height: 190px !important;
+    height: 215px !important;
+    min-height: 215px !important;
+    max-height: 215px !important;
   }
 }

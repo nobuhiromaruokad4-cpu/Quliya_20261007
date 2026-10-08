@@ -94,7 +94,7 @@ export const Header: React.FC<HeaderProps> = ({
               </a>
             </div>
 
-            {/* アプリケーションタイトル & Developed by IMRAM, Tohoku University */}
+            {/* アプリケーションタイトル & Developed by N.Maruoka, IMRAM, Tohoku University */}
             <div className="hidden sm:flex flex-col justify-center">
               <div className="flex items-center space-x-2">
                 <span className="font-bold text-sm sm:text-base tracking-tight text-white leading-tight">
@@ -102,7 +102,7 @@ export const Header: React.FC<HeaderProps> = ({
                 </span>
               </div>
               <span className="text-[10px] text-slate-400 font-mono tracking-tight leading-tight mt-0.5">
-                Developed by IMRAM, Tohoku University
+                Developed by N.Maruoka, IMRAM, Tohoku University
               </span>
             </div>
           </div>
