@@ -213,12 +213,17 @@ export default function App() {
             <div className="w-full grid grid-cols-1 md:grid-cols-12 gap-2.5 items-stretch page-break-inside-avoid print:grid-cols-12 print:gap-2.5">
               {/* 左側 (約2/3・8/12): 3方式冷却スピード比較グラフ */}
               <div className="w-full md:col-span-8 flex flex-col bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden print:col-span-8 print:rounded-lg print:border-slate-300">
-                <div className="bg-slate-50 px-3 py-1.5 border-b border-slate-200 flex items-center justify-between print:px-3 print:py-2">
+                <div className="bg-slate-50 px-3 py-1.5 border-b border-slate-200 flex items-center justify-between print:px-2.5 print:py-1">
                   <div className="flex items-center space-x-1.5">
                     <span className="w-2 h-2 rounded-full bg-cyan-600"></span>
-                    <span className="text-sm font-bold text-slate-900 print:text-[13px]">
+                    <span className="text-sm font-bold text-slate-900 print:text-[11.5px]">
                       3方式冷却スピード比較グラフ
                     </span>
+                  </div>
+                  <div className="text-right text-[10px] text-slate-500 font-sans print:text-[8px] leading-tight">
+                    <span>※水実験モデル準拠（実スープは粘性・Brixで延伸 / </span>
+                    <span className="font-bold text-cyan-800">Brix対応モデル開発中</span>
+                    <span>）</span>
                   </div>
                 </div>
                 <div className="p-2 sm:p-2.5 flex-1 flex flex-col justify-center print:p-1.5">

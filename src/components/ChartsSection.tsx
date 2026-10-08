@@ -1059,7 +1059,7 @@ export const ChartsSection: React.FC<ChartsSectionProps> = ({
       <div
         className={`p-2 sm:p-2.5 relative flex-1 ${
           compact
-            ? 'min-h-[350px] h-[390px] print:min-h-[340px] print:h-[340px] print:max-h-[340px] print:p-2'
+            ? 'min-h-[350px] h-[390px] print:min-h-[285px] print:h-[285px] print:max-h-[285px] print:p-1'
             : 'min-h-[390px] max-h-[490px]'
         }`}
       >
