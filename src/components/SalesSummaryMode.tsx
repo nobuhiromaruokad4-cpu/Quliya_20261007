@@ -463,33 +463,33 @@ export const SalesSummaryMode: React.FC<SalesSummaryModeProps> = ({
         {/* 3方式のハイライトカード */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-2.5 print:grid-cols-3 print:gap-1.5">
           {/* ① QULIYA式 (QULIYA CHILLER) - 推奨・最速・本命 */}
-          <div className="p-2.5 sm:p-3 rounded-lg border-2 border-cyan-500 bg-gradient-to-b from-white via-cyan-50/40 to-cyan-50/80 flex flex-col justify-between shadow-2xs print:p-1.5 print:border-cyan-600">
+          <div className="p-2.5 sm:p-3 rounded-lg border-2 border-cyan-500 bg-gradient-to-b from-white via-cyan-50/40 to-cyan-50/80 flex flex-col justify-between shadow-2xs print:p-2 print:border-cyan-600">
             <div>
               <div className="flex items-center justify-between mb-1 gap-1 pb-1 border-b border-cyan-100">
                 <div className="flex items-center space-x-1.5 min-w-0">
                   <span className="w-2 h-2 rounded-full bg-cyan-600 shrink-0"></span>
-                  <span className="text-xs font-black text-cyan-950 truncate print:text-[10.5px]">
+                  <span className="text-xs font-black text-cyan-950 truncate print:text-[11px]">
                     QULIYA式（回転冷却）
                   </span>
                 </div>
-                <span className="bg-cyan-600 text-white text-[9px] font-bold px-1.5 py-0.2 rounded shadow-2xs shrink-0 whitespace-nowrap print:text-[8px]">
+                <span className="bg-cyan-600 text-white text-[9px] font-bold px-1.5 py-0.2 rounded shadow-2xs shrink-0 whitespace-nowrap print:text-[8.5px]">
                   ★推奨・最速・特許技術
                 </span>
               </div>
 
               {/* 到達時間（整数分） */}
               <div className="flex items-baseline space-x-1 mt-0.5">
-                <span className="text-2xl sm:text-3xl font-black text-cyan-950 font-mono print:text-xl">
+                <span className="text-2xl sm:text-3xl font-black text-cyan-950 font-mono print:text-2xl">
                   {rotTime}
                 </span>
                 <span className="text-xs font-bold text-cyan-700 print:text-[10px]">分</span>
-                <span className="ml-2 text-[10px] font-bold text-emerald-800 bg-emerald-100 border border-emerald-200 px-1.5 py-0.2 rounded font-mono print:text-[8.5px]">
+                <span className="ml-2 text-[10px] font-bold text-emerald-800 bg-emerald-100 border border-emerald-200 px-1.5 py-0.2 rounded font-mono print:text-[9px]">
                   約{rotSpeedRatio}倍速
                 </span>
               </div>
             </div>
 
-            <div className="mt-1.5 pt-1.5 border-t border-cyan-200/90 space-y-1 text-[11px] font-mono print:text-[9.5px] print:space-y-0.5 print:mt-1 print:pt-1">
+            <div className="mt-1.5 pt-1.5 border-t border-cyan-200/90 space-y-1 text-[11px] font-mono print:text-[10px] print:space-y-0.5 print:mt-1 print:pt-1">
               <div className="flex items-center justify-between text-slate-600">
                 <span>水道使用量:</span>
                 <span className="font-bold text-slate-900">{rotWater} L</span>
@@ -504,12 +504,12 @@ export const SalesSummaryMode: React.FC<SalesSummaryModeProps> = ({
               </div>
 
               {/* 食中毒リスク・HACCP衛生対策（精査・要約版） */}
-              <div className="mt-1 pt-1 border-t border-cyan-200/60 text-[9.5px] font-sans leading-tight print:text-[8.5px]">
+              <div className="mt-1 pt-1 border-t border-cyan-200/60 text-[9.5px] font-sans leading-tight print:text-[9px]">
                 <div className="flex items-center space-x-1 font-bold text-red-600">
                   <ShieldCheck className="w-3 h-3 text-red-600 shrink-0" />
                   <span>最危険増殖帯（35〜40℃）を一気に急冷突破</span>
                 </div>
-                <p className="text-[9px] text-slate-600 leading-tight mt-0.5 print:text-[8px]">
+                <p className="text-[9px] text-slate-600 leading-tight mt-0.5 print:text-[8.5px]">
                   菌の爆発的増殖を断ち、冷蔵庫へ即移行・安全保管可能
                 </p>
               </div>
@@ -517,33 +517,33 @@ export const SalesSummaryMode: React.FC<SalesSummaryModeProps> = ({
           </div>
 
           {/* ② 冷却コイル方式 */}
-          <div className="p-2.5 sm:p-3 rounded-lg border border-amber-300 bg-amber-50/40 flex flex-col justify-between print:p-1.5">
+          <div className="p-2.5 sm:p-3 rounded-lg border border-amber-300 bg-amber-50/40 flex flex-col justify-between print:p-2">
             <div>
               <div className="flex items-center justify-between mb-1 pb-1 border-b border-amber-200/60">
                 <div className="flex items-center space-x-1.5">
                   <span className="w-2 h-2 rounded-full bg-amber-500 shrink-0"></span>
-                  <span className="text-xs font-bold text-slate-800 print:text-[10.5px]">
+                  <span className="text-xs font-bold text-slate-800 print:text-[11px]">
                     冷却コイル方式
                   </span>
                 </div>
-                <span className="text-[9px] text-amber-800 bg-amber-100 px-1 py-0.2 rounded font-sans print:text-[8px]">
+                <span className="text-[9px] text-amber-800 bg-amber-100 px-1 py-0.2 rounded font-sans print:text-[8.5px]">
                   据置浸漬
                 </span>
               </div>
 
               {/* 到達時間（整数分） */}
               <div className="flex items-baseline space-x-1 mt-0.5">
-                <span className="text-2xl sm:text-3xl font-black text-slate-800 font-mono print:text-xl">
+                <span className="text-2xl sm:text-3xl font-black text-slate-800 font-mono print:text-2xl">
                   {coilTime}
                 </span>
                 <span className="text-xs font-bold text-slate-600 print:text-[10px]">分</span>
-                <span className="ml-2 text-[10px] font-bold text-amber-800 bg-amber-100 px-1.5 py-0.2 rounded font-mono print:text-[8.5px]">
+                <span className="ml-2 text-[10px] font-bold text-amber-800 bg-amber-100 px-1.5 py-0.2 rounded font-mono print:text-[9px]">
                   約{coilSpeedRatio}倍速
                 </span>
               </div>
             </div>
 
-            <div className="mt-1.5 pt-1.5 border-t border-amber-200/80 space-y-1 text-[11px] font-mono print:text-[9.5px] print:space-y-0.5 print:mt-1 print:pt-1">
+            <div className="mt-1.5 pt-1.5 border-t border-amber-200/80 space-y-1 text-[11px] font-mono print:text-[10px] print:space-y-0.5 print:mt-1 print:pt-1">
               <div className="flex items-center justify-between text-slate-600">
                 <span>水道使用量:</span>
                 <span className="font-bold text-slate-900">{coilWater} L</span>
@@ -558,9 +558,9 @@ export const SalesSummaryMode: React.FC<SalesSummaryModeProps> = ({
               </div>
 
               {/* 衛生・運用上の留意点 */}
-              <div className="mt-1 pt-1 border-t border-amber-200/60 text-[9.5px] font-sans leading-tight print:text-[8.5px]">
+              <div className="mt-1 pt-1 border-t border-amber-200/60 text-[9.5px] font-sans leading-tight print:text-[9px]">
                 <span className="font-bold text-slate-700">衛生・運用の留意点</span>
-                <p className="text-[9px] text-slate-500 leading-tight mt-0.5 print:text-[8px]">
+                <p className="text-[9px] text-slate-500 leading-tight mt-0.5 print:text-[8.5px]">
                   40分以上要し菌増殖帯に滞留。コイル管の洗浄・衛生管理手間も大
                 </p>
               </div>
@@ -568,33 +568,33 @@ export const SalesSummaryMode: React.FC<SalesSummaryModeProps> = ({
           </div>
 
           {/* ③ シンク流水（自然冷却） */}
-          <div className="p-2.5 sm:p-3 rounded-lg border border-slate-300 bg-slate-50/60 flex flex-col justify-between print:p-1.5">
+          <div className="p-2.5 sm:p-3 rounded-lg border border-slate-300 bg-slate-50/60 flex flex-col justify-between print:p-2">
             <div>
               <div className="flex items-center justify-between mb-1 pb-1 border-b border-slate-200">
                 <div className="flex items-center space-x-1.5">
                   <span className="w-2 h-2 rounded-full bg-emerald-600 shrink-0"></span>
-                  <span className="text-xs font-bold text-slate-800 print:text-[10.5px]">
+                  <span className="text-xs font-bold text-slate-800 print:text-[11px]">
                     シンク流水冷却
                   </span>
                 </div>
-                <span className="text-[9px] text-slate-600 bg-slate-200 px-1 py-0.2 rounded font-sans print:text-[8px]">
+                <span className="text-[9px] text-slate-600 bg-slate-200 px-1 py-0.2 rounded font-sans print:text-[8.5px]">
                   自然放置
                 </span>
               </div>
 
               {/* 到達時間（整数分） */}
               <div className="flex items-baseline space-x-1 mt-0.5">
-                <span className="text-2xl sm:text-3xl font-black text-slate-700 font-mono print:text-xl">
+                <span className="text-2xl sm:text-3xl font-black text-slate-700 font-mono print:text-2xl">
                   {sinkTime}
                 </span>
                 <span className="text-xs font-bold text-slate-600 print:text-[10px]">分</span>
-                <span className="ml-2 text-[10px] font-bold text-slate-600 bg-slate-200 px-1.5 py-0.2 rounded font-mono print:text-[8.5px]">
+                <span className="ml-2 text-[10px] font-bold text-slate-600 bg-slate-200 px-1.5 py-0.2 rounded font-mono print:text-[9px]">
                   基準 (1/1)
                 </span>
               </div>
             </div>
 
-            <div className="mt-1.5 pt-1.5 border-t border-slate-200 space-y-1 text-[11px] font-mono print:text-[9.5px] print:space-y-0.5 print:mt-1 print:pt-1">
+            <div className="mt-1.5 pt-1.5 border-t border-slate-200 space-y-1 text-[11px] font-mono print:text-[10px] print:space-y-0.5 print:mt-1 print:pt-1">
               <div className="flex items-center justify-between text-slate-600">
                 <span>水道使用量:</span>
                 <span className="font-bold text-slate-900">{sinkWater} L</span>
@@ -609,13 +609,31 @@ export const SalesSummaryMode: React.FC<SalesSummaryModeProps> = ({
               </div>
 
               {/* 衛生・運用上の留意点 */}
-              <div className="mt-1 pt-1 border-t border-slate-200 text-[9.5px] font-sans leading-tight print:text-[8.5px]">
+              <div className="mt-1 pt-1 border-t border-slate-200 text-[9.5px] font-sans leading-tight print:text-[9px]">
                 <span className="font-bold text-slate-700">衛生・運用の留意点</span>
-                <p className="text-[9px] text-slate-500 leading-tight mt-0.5 print:text-[8px]">
+                <p className="text-[9px] text-slate-500 leading-tight mt-0.5 print:text-[8.5px]">
                   約1.5時間流水放置。菌増殖リスク最大・水道水を大量浪費
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* なぜ目標30℃冷却が決定的に重要なのか？のワンポイント解説バナー */}
+        <div className="mt-2 bg-gradient-to-r from-red-50 via-amber-50/40 to-slate-50 border border-red-200 rounded-lg p-2 sm:p-2.5 text-xs text-slate-700 flex items-start gap-2 shadow-2xs print:mt-1.5 print:p-2 print:border-red-300">
+          <div className="bg-red-100 text-red-700 p-1 rounded-md shrink-0 mt-0.5 print:p-0.5">
+            <ShieldCheck className="w-4 h-4 print:w-3.5 print:h-3.5" />
+          </div>
+          <div className="space-y-0.5 leading-snug">
+            <div className="flex flex-wrap items-center gap-1.5 font-bold text-slate-900 text-[11px] print:text-[10px]">
+              <span className="text-red-700">💡 なぜ「30℃」への急速冷却で劇的な効果があるのか？</span>
+              <span className="text-[10px] bg-red-100 text-red-800 px-1.5 py-0.2 rounded font-normal print:text-[9px]">
+                食中毒菌の至適発育温度：35℃〜40℃
+              </span>
+            </div>
+            <p className="text-[10px] text-slate-600 leading-normal print:text-[9.5px] print:leading-relaxed">
+              食中毒菌（中温菌）は<strong className="text-red-600 font-bold">「35℃〜40℃（体温前後）」で10〜20分ごとに菌数が倍増</strong>する最も危険な発育ピークを迎えます。加熱後の鍋をコンロやシンクで放置するとこの危険帯に1時間以上滞留してしまいますが、QULIYA式チラーで<strong className="text-red-600 font-bold">まず30℃以下まで一気に粗熱を取る</strong>ことで爆発的増殖を断ち切り、冷蔵庫の庫内温度を上げずに速やかに保冷保管へ移せます。
+            </p>
           </div>
         </div>
       </div>
