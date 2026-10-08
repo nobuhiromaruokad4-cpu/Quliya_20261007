@@ -1056,7 +1056,13 @@ export const ChartsSection: React.FC<ChartsSectionProps> = ({
       )}
 
       {/* Chart Canvas Area */}
-      <div className={`p-2 sm:p-2.5 relative flex-1 ${compact ? 'min-h-[350px] h-[390px]' : 'min-h-[390px] max-h-[490px]'}`}>
+      <div
+        className={`p-2 sm:p-2.5 relative flex-1 ${
+          compact
+            ? 'min-h-[350px] h-[390px] print:min-h-[160px] print:h-[160px] print:max-h-[160px] print:p-1'
+            : 'min-h-[390px] max-h-[490px]'
+        }`}
+      >
         {activeTab === 'cooling' && (
           <Line
             key={`cooling_${paramsFingerprint}_${isFixTime}_${isFixTemp}_${isFixWater}_${timeMaxVal}_${tempMaxVal}_${waterMaxVal}`}

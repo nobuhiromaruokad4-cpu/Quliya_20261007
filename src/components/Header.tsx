@@ -20,7 +20,7 @@ export const Header: React.FC<HeaderProps> = ({
   onToggleViewMode,
 }) => {
   return (
-    <header className="bg-slate-900 border-b border-slate-800 text-white sticky top-0 z-30 shadow-md">
+    <header className="bg-slate-900 border-b border-slate-800 text-white sticky top-0 z-30 shadow-md no-print">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14">
           {/* Logos & Title */}
