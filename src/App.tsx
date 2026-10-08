@@ -6,7 +6,6 @@ import { MetricCards } from './components/MetricCards';
 import { ParameterForm } from './components/ParameterForm';
 import { ChartsSection } from './components/ChartsSection';
 import { CaseManager } from './components/CaseManager';
-import { TheoryModal } from './components/TheoryModal';
 import { SalesSummaryMode } from './components/SalesSummaryMode';
 import { ContactInfoCard } from './components/ContactInfoCard';
 
@@ -70,7 +69,6 @@ export default function App() {
 
   const [isCalculating, setIsCalculating] = useState(false);
   const [isPending, startTransition] = useTransition();
-  const [isTheoryOpen, setIsTheoryOpen] = useState(false);
   const [viewMode, setViewMode] = useState<'detail' | 'summary'>('detail');
 
   // パラメータが変更されたら即座にlocalStorageに保存し、シミュレーションを実行・グラフへ反映
@@ -196,52 +194,47 @@ export default function App() {
     <div className="min-h-screen bg-slate-100 flex flex-col font-sans text-slate-800">
       {/* Header */}
       <Header
-        onOpenTheory={() => setIsTheoryOpen(true)}
-        onReset={handleReset}
         viewMode={viewMode}
         onToggleViewMode={setViewMode}
       />
 
       {/* Main Container */}
       <main className="flex-1 max-w-7xl w-full mx-auto p-2 sm:p-3 space-y-2.5">
-        {/* === コスト試算モード時 === */}
+        {/* === コスト試算モード時 (A4縦・最適化レイアウト) === */}
         {viewMode === 'summary' && (
-          <div className="space-y-2.5 print:space-y-1.5 page-break-inside-avoid">
+          <div className="space-y-2.5 print:space-y-2 page-break-inside-avoid">
+            {/* 上段: 提案書ヘッダー・月次コスト削減・3方式スピード対比 */}
             <SalesSummaryMode
               activeResult={activeResult}
               threeModesData={threeModesData}
-              onSwitchToDetail={() => setViewMode('detail')}
             />
 
-            {/* コスト試算下段: 3方式比較グラフ（ワイド 8/12 約67%） + メカニズム＆お問い合わせ窓口（コンパクト 4/12 約33%） */}
-            <div className="w-full grid grid-cols-1 md:grid-cols-12 gap-2.5 items-stretch page-break-inside-avoid print:grid-cols-12 print:gap-1.5">
-              {/* 左側 (幅広 8/12 約67%): 3方式比較グラフ */}
-              <div className="w-full md:col-span-8 flex flex-col bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden print:col-span-8 print:rounded-lg print:border-slate-300">
-                <div className="bg-slate-50 px-3 py-1.5 border-b border-slate-200 flex items-center justify-between print:px-2 print:py-0.5">
-                  <div className="flex items-center space-x-1.5">
-                    <span className="w-2 h-2 rounded-full bg-cyan-600"></span>
-                    <span className="text-sm font-bold text-slate-900 print:text-xs">
-                      3方式冷却スピード比較グラフ
-                    </span>
-                  </div>
-                </div>
-                <div className="p-2 sm:p-2.5 flex-1 flex flex-col justify-center print:p-0.5">
-                  <ChartsSection
-                    activeResult={activeResult}
-                    savedResults={savedCases}
-                    threeModesData={threeModesData}
-                    initialTab="threeModes"
-                    compact={true}
-                    hideTabs={true}
-                    hideHoverReadout={true}
-                  />
+            {/* 中段: 3方式冷却スピード比較グラフ（A4縦・フル幅ワイド表示） */}
+            <div className="w-full flex flex-col bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden print:rounded-lg print:border-slate-300 page-break-inside-avoid">
+              <div className="bg-slate-50 px-3 py-1.5 border-b border-slate-200 flex items-center justify-between print:px-2.5 print:py-1">
+                <div className="flex items-center space-x-1.5">
+                  <span className="w-2 h-2 rounded-full bg-cyan-600"></span>
+                  <span className="text-sm font-bold text-slate-900 print:text-xs">
+                    3方式冷却スピード比較グラフ
+                  </span>
                 </div>
               </div>
+              <div className="p-2 sm:p-2.5 flex-1 flex flex-col justify-center print:p-1">
+                <ChartsSection
+                  activeResult={activeResult}
+                  savedResults={savedCases}
+                  threeModesData={threeModesData}
+                  initialTab="threeModes"
+                  compact={true}
+                  hideTabs={true}
+                  hideHoverReadout={true}
+                />
+              </div>
+            </div>
 
-              {/* 右側 (コンパクト幅 4/12 約33%): メカニズム（上段）＋ お問い合わせ・製品窓口（下段） */}
-              <div className="w-full md:col-span-4 flex flex-col print:col-span-4">
-                <ContactInfoCard />
-              </div>
+            {/* 下段: メカニズム (左50%) ＋ お問い合わせ・各社ロゴ (右50%) */}
+            <div className="w-full page-break-inside-avoid">
+              <ContactInfoCard />
             </div>
           </div>
         )}
@@ -295,14 +288,11 @@ export default function App() {
       </main>
 
       {/* Footer attribution */}
-      <footer className="mt-auto border-t border-slate-200 bg-white/80 py-2.5 px-4 text-center text-xs text-slate-500">
+      <footer className="mt-auto border-t border-slate-200 bg-white/80 py-2.5 px-4 text-center text-xs text-slate-500 no-print">
         <p className="font-mono text-[11px]">
-          Developed by Institute of Multidisciplinary Research for Advanced Materials (IMRAM), Tohoku University
+          Developed by IMRAM, Tohoku University
         </p>
       </footer>
-
-      {/* Theory & Model Modal (Secure Overview) */}
-      <TheoryModal isOpen={isTheoryOpen} onClose={() => setIsTheoryOpen(false)} />
     </div>
   );
 }

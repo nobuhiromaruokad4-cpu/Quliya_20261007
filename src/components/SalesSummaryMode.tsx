@@ -20,7 +20,6 @@ interface SalesSummaryModeProps {
     coil: SimulationResult;
     sink: SimulationResult;
   };
-  onSwitchToDetail: () => void;
 }
 
 /**
@@ -40,7 +39,6 @@ export function getPdfFileName(customerName: string): string {
 export const SalesSummaryMode: React.FC<SalesSummaryModeProps> = ({
   activeResult,
   threeModesData,
-  onSwitchToDetail,
 }) => {
   // お客様情報（提案書・印刷時に印字可能）
   const [customerName, setCustomerName] = useState<string>('');
@@ -177,61 +175,43 @@ export const SalesSummaryMode: React.FC<SalesSummaryModeProps> = ({
             </p>
           </div>
 
-          {/* 右上アクション: PDF保存/印刷 & 詳細へ戻る */}
+          {/* 右上アクション: PDF保存/印刷 */}
           <div className="flex items-center space-x-2 shrink-0">
             <button
               onClick={handlePrint}
               className="inline-flex items-center space-x-1.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-3 py-1.5 rounded-lg border border-emerald-500 transition cursor-pointer shadow-xs active:scale-95"
-              title={`PDF提案書として保存（ファイル名: ${currentPdfFileName}）`}
+              title="この提案書をA4縦1ページでPDF保存または印刷"
             >
               <Printer className="w-3.5 h-3.5" />
               <span>PDF保存 / 印刷</span>
             </button>
-
-            <button
-              onClick={onSwitchToDetail}
-              className="inline-flex items-center space-x-1 bg-white/10 hover:bg-white/20 text-white text-xs font-semibold px-2.5 py-1.5 rounded-lg border border-white/20 transition cursor-pointer"
-            >
-              <Sliders className="w-3.5 h-3.5 text-cyan-400" />
-              <span>「詳細」で条件変更</span>
-              <ChevronRight className="w-3 h-3 text-slate-400" />
-            </button>
           </div>
         </div>
 
-        {/* 提案用の顧客名・担当者名入力欄 & 出力ファイル名プレビュー */}
-        <div className="pt-2 flex flex-wrap items-center justify-between gap-2 text-xs">
-          <div className="flex flex-wrap items-center gap-2.5">
-            <div className="flex items-center space-x-1.5 bg-white/10 px-2 py-1 rounded-md border border-white/10">
-              <Building2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-              <span className="text-[11px] text-slate-300">提案先店舗・企業名:</span>
-              <input
-                type="text"
-                placeholder="例: 〇〇ラーメン 様"
-                value={customerName}
-                onChange={(e) => setCustomerName(e.target.value)}
-                className="bg-transparent border-b border-cyan-400/50 focus:border-cyan-300 outline-none text-white text-xs font-bold px-1 w-40 placeholder:text-slate-500"
-              />
-            </div>
-
-            <div className="flex items-center space-x-1.5 bg-white/10 px-2 py-1 rounded-md border border-white/10">
-              <User className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-              <span className="text-[11px] text-slate-300">営業担当者:</span>
-              <input
-                type="text"
-                placeholder="例: 山田 太郎"
-                value={salesRepName}
-                onChange={(e) => setSalesRepName(e.target.value)}
-                className="bg-transparent border-b border-cyan-400/50 focus:border-cyan-300 outline-none text-white text-xs font-bold px-1 w-24 placeholder:text-slate-500"
-              />
-            </div>
+        {/* 提案用の顧客名・担当者名入力欄 */}
+        <div className="pt-2 flex flex-wrap items-center gap-2.5 text-xs">
+          <div className="flex items-center space-x-1.5 bg-white/10 px-2 py-1 rounded-md border border-white/10">
+            <Building2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+            <span className="text-[11px] text-slate-300">提案先店舗・企業名:</span>
+            <input
+              type="text"
+              placeholder="例: 〇〇ラーメン 様"
+              value={customerName}
+              onChange={(e) => setCustomerName(e.target.value)}
+              className="bg-transparent border-b border-cyan-400/50 focus:border-cyan-300 outline-none text-white text-xs font-bold px-1 w-40 placeholder:text-slate-500"
+            />
           </div>
 
-          {/* 出力ファイル名プレビュー */}
-          <div className="flex items-center space-x-1.5 bg-cyan-950/70 border border-cyan-500/40 px-2.5 py-1 rounded-md text-[11px] text-cyan-200">
-            <FileCheck className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-            <span className="text-slate-400">PDFファイル名:</span>
-            <span className="font-mono font-bold text-cyan-300">{currentPdfFileName}</span>
+          <div className="flex items-center space-x-1.5 bg-white/10 px-2 py-1 rounded-md border border-white/10">
+            <User className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+            <span className="text-[11px] text-slate-300">営業担当者:</span>
+            <input
+              type="text"
+              placeholder="例: 山田 太郎"
+              value={salesRepName}
+              onChange={(e) => setSalesRepName(e.target.value)}
+              className="bg-transparent border-b border-cyan-400/50 focus:border-cyan-300 outline-none text-white text-xs font-bold px-1 w-24 placeholder:text-slate-500"
+            />
           </div>
         </div>
       </div>

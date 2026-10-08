@@ -1,21 +1,15 @@
 import React from 'react';
 import {
-  BookOpen,
-  RotateCcw,
   Sparkles,
   Sliders,
 } from 'lucide-react';
 
 interface HeaderProps {
-  onOpenTheory: () => void;
-  onReset: () => void;
   viewMode: 'summary' | 'detail';
   onToggleViewMode: (mode: 'summary' | 'detail') => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
-  onOpenTheory,
-  onReset,
   viewMode,
   onToggleViewMode,
 }) => {
@@ -100,7 +94,7 @@ export const Header: React.FC<HeaderProps> = ({
               </a>
             </div>
 
-            {/* アプリケーションタイトル & 東北大学多元物質科学研究所製(英語) */}
+            {/* アプリケーションタイトル & Developed by IMRAM, Tohoku University */}
             <div className="hidden sm:flex flex-col justify-center">
               <div className="flex items-center space-x-2">
                 <span className="font-bold text-sm sm:text-base tracking-tight text-white leading-tight">
@@ -108,14 +102,14 @@ export const Header: React.FC<HeaderProps> = ({
                 </span>
               </div>
               <span className="text-[10px] text-slate-400 font-mono tracking-tight leading-tight mt-0.5">
-                Developed by Institute of Multidisciplinary Research for Advanced Materials (IMRAM), Tohoku University
+                Developed by IMRAM, Tohoku University
               </span>
             </div>
           </div>
 
           {/* Actions & View Mode Toggle */}
           <div className="flex items-center space-x-2">
-            {/* View Mode Toggle (詳細 / サマリー) */}
+            {/* View Mode Toggle (詳細 / コスト試算) */}
             <div className="bg-slate-800 p-0.5 rounded-lg border border-slate-700 flex items-center shadow-xs">
               <button
                 onClick={() => onToggleViewMode('detail')}
@@ -142,26 +136,6 @@ export const Header: React.FC<HeaderProps> = ({
                 <span>コスト試算</span>
               </button>
             </div>
-
-            {/* Theory modal */}
-            <button
-              onClick={onOpenTheory}
-              title="物理計算モデル・数式解説"
-              className="hidden sm:flex items-center space-x-1 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium px-2 py-1.5 rounded-md border border-slate-700 transition cursor-pointer shadow-xs"
-            >
-              <BookOpen className="w-3.5 h-3.5 text-cyan-400" />
-              <span>モデル解説</span>
-            </button>
-
-            {/* Reset */}
-            <button
-              onClick={onReset}
-              title="初期パラメータに戻す"
-              className="flex items-center space-x-1 text-slate-300 hover:text-white px-2 py-1.5 rounded-md hover:bg-slate-800 border border-slate-700 text-xs transition cursor-pointer shadow-xs"
-            >
-              <RotateCcw className="w-3 h-3" />
-              <span className="hidden sm:inline">初期化</span>
-            </button>
           </div>
         </div>
       </div>
