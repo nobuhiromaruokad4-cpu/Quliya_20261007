@@ -8,10 +8,10 @@
     display: none !important;
   }
 
-  /* A4縦1ページにバランス良く収める用紙設定 (上下6mm・左右7mm) */
+  /* A4縦1ページにバランス良く収める用紙設定 (上下8mm・左右8mm) */
   @page {
     size: A4 portrait;
-    margin: 6mm 7mm 6mm 7mm;
+    margin: 8mm 8mm 8mm 8mm;
   }
 
   html, body {
@@ -41,15 +41,15 @@
     page-break-after: avoid !important;
   }
 
-  /* 印刷時の適度な余白設定 (余白2割分を均等に活用) */
+  /* 印刷時の適度な余白設定 (A4縦1ページを美しく満たす余白感) */
   .space-y-3 > :not([hidden]) ~ :not([hidden]) {
-    margin-top: 0.5rem !important;
+    margin-top: 0.65rem !important;
   }
   .space-y-2\.5 > :not([hidden]) ~ :not([hidden]) {
-    margin-top: 0.45rem !important;
+    margin-top: 0.55rem !important;
   }
   .space-y-2 > :not([hidden]) ~ :not([hidden]) {
-    margin-top: 0.4rem !important;
+    margin-top: 0.5rem !important;
   }
 
   /* 影の無効化 */
@@ -60,10 +60,10 @@
     box-shadow: none !important;
   }
 
-  /* 印刷時のグラフ枠高さ制御 (280pxに拡張して余白を解消) */
+  /* 印刷時のグラフ枠高さ制御 (340pxに拡張して余白を完全に最適化) */
   .print-chart-container {
-    height: 280px !important;
-    min-height: 280px !important;
-    max-height: 280px !important;
+    height: 340px !important;
+    min-height: 340px !important;
+    max-height: 340px !important;
   }
 }
