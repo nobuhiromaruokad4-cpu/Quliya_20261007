@@ -57,7 +57,7 @@ export const CaseManager: React.FC<CaseManagerProps> = ({
       ) : (
         <div className="overflow-x-auto max-h-[160px] overflow-y-auto">
           <table className="w-full text-left text-[11px] font-mono whitespace-nowrap">
-            <thead className="bg-slate-100/80 text-slate-600 uppercase border-b border-slate-200 sticky top-0 z-10">
+            <thead className="bg-slate-100/80 text-slate-600 border-b border-slate-200 sticky top-0 z-10">
               <tr>
                 <th className="px-3 py-1 font-bold">色 / ケース名</th>
                 <th className="px-2 py-1 font-bold">熱交換器</th>
@@ -68,7 +68,6 @@ export const CaseManager: React.FC<CaseManagerProps> = ({
                 <th className="px-2 py-1 font-bold text-amber-700">40℃時間</th>
                 <th className="px-2 py-1 font-bold text-blue-700">30℃時間</th>
                 <th className="px-2 py-1 font-bold text-emerald-700">目標時間</th>
-                <th className="px-2 py-1 font-bold">平均U</th>
                 <th className="px-3 py-1 text-right font-sans font-bold">操作</th>
               </tr>
             </thead>
@@ -124,7 +123,6 @@ export const CaseManager: React.FC<CaseManagerProps> = ({
                     <td className="px-2 py-1 text-emerald-700 font-bold">
                       {c.timeToTarget ? `${c.timeToTarget.toFixed(1)}分` : '-'}
                     </td>
-                    <td className="px-2 py-1">{c.avgU.toFixed(1)}</td>
                     <td className="px-3 py-1 text-right space-x-1" onClick={(e) => e.stopPropagation()}>
                       <button
                         onClick={() => onSelectCase(c.id)}

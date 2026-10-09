@@ -10,7 +10,7 @@ export const ChillerDeviceDiagram: React.FC = () => {
           特願2026-201346
         </span>
         <span className="text-[10px] font-bold text-red-600 bg-red-50 border border-red-200 px-1.5 py-0.5 rounded shadow-2xs">
-          特許7598603
+          特許7598603号
         </span>
       </div>
 
